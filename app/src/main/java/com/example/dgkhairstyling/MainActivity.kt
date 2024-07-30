@@ -24,5 +24,5 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText usernameInput;
     private EditText passwordInput;
-    private Button loginButton;
+    private Button loginButton
 
