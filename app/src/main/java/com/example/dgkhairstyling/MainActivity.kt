@@ -1,28 +1,27 @@
 package com.example.dgkhairstyling
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.*
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.*
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.dgkhairstyling.ui.theme.DGKHairstylingTheme
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 
-import androidx.appcompat.app.AppCompatActivity;
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_loading)
 
+        // Handler to start the LoginActivity and close this LoadingScreen after 3 seconds
+        Handler().postDelayed({
+            val mainIntent = Intent(
+                this@MainActivity,
+                LoginActivity::class.java
+            )
+            this@MainActivity.startActivity(mainIntent)
+            this@MainActivity.finish()
+        }, LOADING_SCREEN_DISPLAY_LENGTH.toLong())
+    }
 
-public class MainActivity extends AppCompatActivity {
-
-    private EditText usernameInput;
-    private EditText passwordInput;
-    private Button loginButton
-
+    companion object {
+        private const val LOADING_SCREEN_DISPLAY_LENGTH = 3000 // 3 seconds
+    }
+}
