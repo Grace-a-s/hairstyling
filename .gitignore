@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+=======
 node_modules/
 .expo/
 dist/
@@ -12,3 +29,4 @@ web-build/
 
 # macOS
 .DS_Store
+>>>>>>> 369a9fd465b3a39d9c19771f271d7202a770cc06
